@@ -1,3 +1,39 @@
 <h1>
-  {{title}}
+  Simple String
 </h1>
+<li *ngFor="let str of stringArray; let num= index">
+  {{num+1}} {{str}}
+</li>
+
+<h1>Array of Object</h1>
+<table border="1px">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Mark</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let arr of objectArray">
+    <td>{{ arr.name }}</td>
+    <td>{{ arr.mark }}</td>
+    <td>{{ arr.city }}</td>
+  </tr>
+</table>
+
+<h1>Array of Nested Object</h1>
+<div *ngFor="let item of complexObjectArray">
+  <h2>{{ item.city }}</h2>
+  <table border="1px" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let p of item.people">
+      <td>{{ p.name }}</td>
+      <td>{{ p.mark }}</td>
+    </tr>
+  </table>
+</div>
